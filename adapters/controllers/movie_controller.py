@@ -4,7 +4,6 @@ from services.delete_movie import DeleteMovieService
 from services.get_movie import GetMovieService
 from services.list_movies import ListMoviesService
 from services.search_movies import SearchMoviesService
-import secrets
 
 class MovieController:
     def __init__(self, movie_repository):
