@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Movies</title>
+</head>
+<body>
+    <h1>Movies</h1>
+    <ul>
+        {% for movie in movies %}
+        <li>
+            <a href="{{ url_for('movie_router.get_movie', code=movie.code) }}">{{ movie.title }} ({{ movie.year }})</a> 
+            - {{ movie.format }} 
+            - {{ movie.actors }}
+            - ID: {{ movie.code }}
+            <a href="{{ url_for('movie_router.delete_movie', code=movie.code) }}">Delete</a>
+        </li>
+        {% endfor %}
+    </ul>
+    <a href="{{ url_for('movie_router.import_movies') }}">Import Movies</a>
+    <a href="{{ url_for('movie_router.add_movie') }}">Add Movie</a>
+    <a href="{{ url_for('movie_router.sort_movies') }}">Sort Movies</a>
+    <a href="{{ url_for('movie_router.search_movies') }}">Search Movies</a>
+</body>
+</html>

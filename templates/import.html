@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Import Movies</title>
+</head>
+<body>
+    <h1>Import Movies</h1>
+    <form action="{{ url_for('movie_router.import_movies') }}" method="post" enctype="multipart/form-data">
+        <input type="file" name="file" required>
+        <button type="submit">Import</button>
+    </form>
+    <a href="{{ url_for('movie_router.index') }}">Back to Movies</a>
+</body>
+</html>
